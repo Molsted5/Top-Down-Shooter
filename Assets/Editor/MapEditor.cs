@@ -1,26 +1,33 @@
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor( typeof( MapGenerator ) )]
-public class MapEditor: Editor {
+[CustomEditor(typeof(MapGenerator))]
+public class MapEditor : Editor {
+    
+    bool autoUpdate = true;
 
-    private bool autoUpdate = false;
-
-    public override void OnInspectorGUI() {
-        base.OnInspectorGUI();
+    public override void OnInspectorGUI()
+    {
+        //base.OnInspectorGUI();
 
         MapGenerator map = target as MapGenerator;
 
-        if( GUILayout.Button( "Generate Map" ) ) {
+        if( DrawDefaultInspector()&&autoUpdate ) {
             map.GenerateMap();
         }
 
-        if( GUILayout.Button( autoUpdate ? "Auto Update: ON" : "Auto Update: OFF" ) ) {
-            autoUpdate = !autoUpdate;
+        //if( autoUpdate && GUI.changed ) { 
+        //    map.GenerateMap(); 
+        //}
+
+        if( GUILayout.Button( autoUpdate ? "Auto Update: ON" : "Auto Update: OFF" ) ) { 
+            autoUpdate = !autoUpdate; 
         }
 
-        if( autoUpdate && GUI.changed ) {
+        if (GUILayout.Button("Generate Map"))
+        {
             map.GenerateMap();
         }
     }
+
 }

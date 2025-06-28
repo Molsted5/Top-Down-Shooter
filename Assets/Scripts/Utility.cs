@@ -1,3 +1,4 @@
+using UnityEngine;
 
 public static class Utility {
 
@@ -12,6 +13,24 @@ public static class Utility {
         }
 
         return array;
+    }
+
+    public static Color HSVLerp(Color a, Color b, float t) {
+        Color.RGBToHSV(a, out float h1, out float s1, out float v1);
+        Color.RGBToHSV(b, out float h2, out float s2, out float v2);
+
+        // Hue wrapping
+        if (Mathf.Abs(h1 - h2) > 0.5f)
+        {
+            if (h1 > h2) h2 += 1f;
+            else h1 += 1f;
+        }
+
+        float h = Mathf.Lerp(h1, h2, t) % 1f;
+        float s = Mathf.Lerp(s1, s2, t);
+        float v = Mathf.Lerp(v1, v2, t);
+
+        return Color.HSVToRGB(h, s, v);
     }
 
 }
