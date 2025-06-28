@@ -147,3 +147,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 5
+  deathEffect: {fileID: 5252188121449507736, guid: a1596888089d1d745ad3eab303caf92f, type: 3}
