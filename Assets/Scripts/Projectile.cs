@@ -16,6 +16,7 @@ public class Projectile : MonoBehaviour {
         if( initialCollisions.Length > 0 ) {
             OnHitObject( initialCollisions[0], transform.position );
         }
+
     }
 
     void Update() {
