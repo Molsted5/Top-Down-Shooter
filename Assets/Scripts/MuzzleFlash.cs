@@ -10,7 +10,7 @@ public class MuzzleFlash : MonoBehaviour {
 
     void Start()
     {
-        
+        Deactivate();
     }
 
     public void Activate() {
