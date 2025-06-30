@@ -26,6 +26,8 @@ public class GameUI : MonoBehaviour {
             fadePlane.color = Color.Lerp(from, to, fraction );
             yield return null;
         }
+
+        Cursor.visible = true;
     }
 
     // UI Input
