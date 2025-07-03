@@ -85,7 +85,7 @@ public class Spawner : MonoBehaviour {
             spawnTile = map.GetTileFromPosition(playerTransform.position);
         }
         Material tileMat = spawnTile.GetComponent<Renderer>().material;
-        Color initialColor = tileMat.color;
+        Color initialColor = map.tilePrefab.GetComponent<Renderer>().sharedMaterial.color;
         Color flashColor = Color.red;
         float spawnTimer = 0;
 
@@ -98,12 +98,10 @@ public class Spawner : MonoBehaviour {
             yield return null;
         }
 
-        tileMat.color = initialColor;
-
         Enemy spawnedEnemy = Instantiate(enemy, spawnTile.position + Vector3.up, Quaternion.identity) as Enemy;
         spawnedEnemy.OnDeath += OnEnemyDeath;
         spawnedEnemy.SetCharacteristics( currentWave.moveSpeed, currentWave.hitsToKillPlayer, currentWave.enemyHealth, currentWave.skinColor );
-        
+
         spawnEnemyCoroutine = null;
     }
     

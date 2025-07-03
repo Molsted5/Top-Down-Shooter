@@ -80,11 +80,20 @@ public class Enemy : LivingEntity {
     }
 
     public override void TakeHit( float damage, Vector3 hitPoint, Vector3 hitDirection ) {
-        if(damage >= health ) {
-            Destroy( Instantiate( deathEffect.gameObject, hitPoint, Quaternion.FromToRotation( Vector3.forward, hitDirection ) ) as GameObject, deathEffect.main.startLifetime.constant );
+        if ( damage >= health ) {
+            GameObject effectInstance = Instantiate( deathEffect.gameObject, hitPoint, Quaternion.FromToRotation( Vector3.forward, hitDirection ) );
+
+            ParticleSystemRenderer renderer = effectInstance.GetComponent<ParticleSystemRenderer>();
+            renderer.material = new Material( renderer.material ); // Clone to avoid modifying the shared material
+            renderer.material.color = originalColor;
+
+            ParticleSystem particleSystem = effectInstance.GetComponent<ParticleSystem>();
+            Destroy( effectInstance, particleSystem.main.duration + particleSystem.main.startLifetime.constantMax );
         }
+
         base.TakeHit( damage, hitPoint, hitDirection );
     }
+
 
     void OnTargetDeath() {
         hasTarget = false;
