@@ -83,7 +83,7 @@ public class Gun: MonoBehaviour {
         while( true ) {
             transform.localPosition = Vector3.SmoothDamp( transform.localPosition, Vector3.zero, ref recoilVelocity, recoilMoveSettleTime );
             recoilAngle = Mathf.SmoothDamp( recoilAngle, 0f, ref recoilAngleVelocity, recoilRotationSettleTime );
-            transform.localEulerAngles = Vector3.left * recoilAngle;
+            transform.localEulerAngles = Vector3.left * recoilAngle; // initial rotation not added because it is resetting to zero
 
             if( recoilAngle < 0.01f && transform.localPosition.magnitude < 0.001f ) break;
 

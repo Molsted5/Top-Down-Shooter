@@ -95,7 +95,10 @@ public class AudioManager : MonoBehaviour {
     }
 
     public void PlaySound2D( string soundName ) {
-        sfx2DSource.PlayOneShot( library.GetClipFromName( soundName ), sfxVolumeFraction * masterVolumeFraction );
+        AudioClip clip = library.GetClipFromName( soundName );
+        if( clip != null ) {
+            sfx2DSource.PlayOneShot( clip, sfxVolumeFraction * masterVolumeFraction );
+        }
     }
 
     IEnumerator AnimateMusicCrossfade( float fadeDuration ) {
