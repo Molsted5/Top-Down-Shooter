@@ -54,11 +54,14 @@ public class Enemy : LivingEntity {
     }
 
     void Update() {
+
+        // Attack
         if( hasTarget ) {
             if( Time.time > nextAttackTime ) {
                 float sqrDstToTarget = ( target.position - transform.position ).sqrMagnitude; // c^2 instead of c (pythagoras) because its cheaper than sqrroot and its the same in a relative camparison
                 if( sqrDstToTarget < Mathf.Pow( attackDistanceTreshold + myCollisionRadius + targetCollisionRadius, 2 ) ) {
                     nextAttackTime = Time.time + timebetweenAttacks;
+                    AudioManager.Instance.PlaySound( "Enemy Attack", transform.position );
                     StartCoroutine( Attack() );
                 }
             }
@@ -80,7 +83,10 @@ public class Enemy : LivingEntity {
     }
 
     public override void TakeHit( float damage, Vector3 hitPoint, Vector3 hitDirection ) {
+        AudioManager.Instance.PlaySound( "Impact", transform.position );
         if ( damage >= health ) {
+            AudioManager.Instance.PlaySound( "Enemy Death", transform.position );
+            
             GameObject effectInstance = Instantiate( deathEffect.gameObject, hitPoint, Quaternion.FromToRotation( Vector3.forward, hitDirection ) );
 
             ParticleSystemRenderer renderer = effectInstance.GetComponent<ParticleSystemRenderer>();
@@ -101,6 +107,7 @@ public class Enemy : LivingEntity {
     }
 
     IEnumerator Attack() {
+
         currentState = State.Attacking;
         pathfinder.enabled = false;
         Vector3 originalPosition = transform.position;
@@ -133,6 +140,7 @@ public class Enemy : LivingEntity {
     }
 
     IEnumerator UpdatePath() {
+
         float refreshRate = 0.25f;
 
         while( hasTarget ) {

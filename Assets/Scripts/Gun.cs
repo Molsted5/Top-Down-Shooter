@@ -23,6 +23,9 @@ public class Gun: MonoBehaviour {
     [Header( "Effects" )]
     public Transform shell;
     public Transform shellEjection;
+    public AudioClip shootAudio;
+    public AudioClip reloadAudio;
+
     MuzzleFlash muzzleFlash;
     float nextShotTime;
 
@@ -71,6 +74,8 @@ public class Gun: MonoBehaviour {
             if( projectilesRemainingInMag == 0 ) {
                 Reload();
             }
+
+            AudioManager.Instance.PlaySound( shootAudio, transform.position );
         }
     }
 
@@ -95,6 +100,7 @@ public class Gun: MonoBehaviour {
         if( !isReloading && projectilesRemainingInMag != projectilesPerMag ) {
             shotsRemainingInBurst = burstCount;
             StartCoroutine( AnimateReload() );
+            AudioManager.Instance.PlaySound( reloadAudio, transform.position );
         }
     }
 

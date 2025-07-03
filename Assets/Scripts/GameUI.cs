@@ -9,6 +9,7 @@ public class GameUI : MonoBehaviour {
     public Image fadePlane;
     public GameObject gameOverUI;
 
+    public GameObject newWaveUI;
     public RectTransform newWaveBanner;
     public TextMeshProUGUI newWaveTitle;
     public TextMeshProUGUI newWaveEnemyCount;
@@ -23,6 +24,7 @@ public class GameUI : MonoBehaviour {
     }
 
     void OnNewWave( int waveNumber ) {
+        newWaveUI.SetActive( true );
         string[] numbers = { "One", "Two", "Three", "Four", "Five" };
         newWaveTitle.text = "- Wave " + numbers[waveNumber-1] + " -";
         string enemyCountString = spawner.waves[waveNumber-1].infinite ? "Infinite" : spawner.waves[waveNumber-1].enemyCount + ""; 
