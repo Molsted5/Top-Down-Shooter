@@ -59,7 +59,7 @@ MonoBehaviour:
   - {fileID: 988705374608727604}
   - {fileID: 7073896291614148221}
   projectile: {fileID: 4331083043027685459, guid: dd114af8a3864c547ba1d977c7e03b67, type: 3}
-  msBetweenShots: 100
+  msBetweenShots: 400
   muzzleVelocity: 25
   burstCount: 3
   projectilesPerMag: 12

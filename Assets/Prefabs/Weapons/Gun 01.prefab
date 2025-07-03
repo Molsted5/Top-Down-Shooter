@@ -629,7 +629,7 @@ MonoBehaviour:
   projectileSpawn:
   - {fileID: 4419583832067439284}
   projectile: {fileID: 4331083043027685459, guid: dd114af8a3864c547ba1d977c7e03b67, type: 3}
-  msBetweenShots: 100
+  msBetweenShots: 350
   muzzleVelocity: 20
   burstCount: 3
   projectilesPerMag: 12
