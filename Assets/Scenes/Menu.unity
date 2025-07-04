@@ -255,6 +255,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 50832995}
   m_CullTransparentMesh: 1
+--- !u!1 &177415025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 177415027}
+  - component: {fileID: 177415026}
+  m_Layer: 0
+  m_Name: Menu UI Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &177415026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177415025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85893726a8e20641830eb6ffcc913ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenuHolder: {fileID: 312814709}
+  optionsMenuHolder: {fileID: 312556293}
+--- !u!4 &177415027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177415025}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 190.57915, y: 220.45963, z: -380.5898}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &285357535
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,9 +570,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1560048275}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: Play
+      - m_Target: {fileID: 177415026}
+        m_TargetAssemblyTypeName: MenuUIController, Assembly-CSharp
+        m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -722,7 +768,7 @@ GameObject:
   - component: {fileID: 503613798}
   - component: {fileID: 503613797}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -951,9 +997,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1560048275}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: OptionsMenu
+      - m_Target: {fileID: 177415026}
+        m_TargetAssemblyTypeName: MenuUIController, Assembly-CSharp
+        m_MethodName: OpenOptions
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1001,6 +1047,110 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853532995}
   m_CullTransparentMesh: 1
+--- !u!1001 &886897712
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 216715437648873256, guid: 994c7a280ad02c44ca79cc61aa80bd11, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 993.36945
+      objectReference: {fileID: 0}
+    - target: {fileID: 216715437648873256, guid: 994c7a280ad02c44ca79cc61aa80bd11, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 273.1805
+      objectReference: {fileID: 0}
+    - target: {fileID: 216715437648873256, guid: 994c7a280ad02c44ca79cc61aa80bd11, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.6643825
+      objectReference: {fileID: 0}
+    - target: {fileID: 216715437648873256, guid: 994c7a280ad02c44ca79cc61aa80bd11, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 216715437648873256, guid: 994c7a280ad02c44ca79cc61aa80bd11, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 216715437648873256, guid: 994c7a280ad02c44ca79cc61aa80bd11, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 216715437648873256, guid: 994c7a280ad02c44ca79cc61aa80bd11, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 216715437648873256, guid: 994c7a280ad02c44ca79cc61aa80bd11, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 216715437648873256, guid: 994c7a280ad02c44ca79cc61aa80bd11, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 216715437648873256, guid: 994c7a280ad02c44ca79cc61aa80bd11, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316144739392669813, guid: 994c7a280ad02c44ca79cc61aa80bd11, type: 3}
+      propertyPath: m_Name
+      value: Settings Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5937670887108228719, guid: 994c7a280ad02c44ca79cc61aa80bd11, type: 3}
+      propertyPath: fullscreenToggle
+      value: 
+      objectReference: {fileID: 1973254066}
+    - target: {fileID: 5937670887108228719, guid: 994c7a280ad02c44ca79cc61aa80bd11, type: 3}
+      propertyPath: volumeSliders.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5937670887108228719, guid: 994c7a280ad02c44ca79cc61aa80bd11, type: 3}
+      propertyPath: 'volumeSliders.Array.data[0]'
+      value: 
+      objectReference: {fileID: 941071683}
+    - target: {fileID: 5937670887108228719, guid: 994c7a280ad02c44ca79cc61aa80bd11, type: 3}
+      propertyPath: 'volumeSliders.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1804404682}
+    - target: {fileID: 5937670887108228719, guid: 994c7a280ad02c44ca79cc61aa80bd11, type: 3}
+      propertyPath: 'volumeSliders.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1047353542}
+    - target: {fileID: 5937670887108228719, guid: 994c7a280ad02c44ca79cc61aa80bd11, type: 3}
+      propertyPath: resolutionToggles.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5937670887108228719, guid: 994c7a280ad02c44ca79cc61aa80bd11, type: 3}
+      propertyPath: 'resolutionToggles.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1470313401}
+    - target: {fileID: 5937670887108228719, guid: 994c7a280ad02c44ca79cc61aa80bd11, type: 3}
+      propertyPath: 'resolutionToggles.Array.data[1]'
+      value: 
+      objectReference: {fileID: 677575336}
+    - target: {fileID: 5937670887108228719, guid: 994c7a280ad02c44ca79cc61aa80bd11, type: 3}
+      propertyPath: 'resolutionToggles.Array.data[2]'
+      value: 
+      objectReference: {fileID: 661581633}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 994c7a280ad02c44ca79cc61aa80bd11, type: 3}
+--- !u!114 &886897713 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5937670887108228719, guid: 994c7a280ad02c44ca79cc61aa80bd11, type: 3}
+  m_PrefabInstance: {fileID: 886897712}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62a1bf2b66f9c1c408ffd6e30ce16d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &941071683 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2137208273092486449, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
@@ -1095,9 +1245,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1560048275}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: Quit
+      - m_Target: {fileID: 177415026}
+        m_TargetAssemblyTypeName: MenuUIController, Assembly-CSharp
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1352,62 +1502,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1560048274
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1560048276}
-  - component: {fileID: 1560048275}
-  m_Layer: 0
-  m_Name: Menu Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1560048275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560048274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 836543a1cbc289b40b25172d788ba566, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainMenuHolder: {fileID: 312814709}
-  optonsMenuHolder: {fileID: 312556293}
-  volumeSliders:
-  - {fileID: 941071683}
-  - {fileID: 1804404682}
-  - {fileID: 1047353542}
-  resolutionToggles:
-  - {fileID: 1470313401}
-  - {fileID: 677575336}
-  - {fileID: 661581633}
-  fullscreenToggle: {fileID: 1973254066}
-  screenWidths: c00300000005000080070000
---- !u!4 &1560048276
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560048274}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 993.36945, y: 273.1805, z: 4.6643825}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1647540801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1745,15 +1839,39 @@ PrefabInstance:
     - target: {fileID: 274145337266790723, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1560048275}
+      objectReference: {fileID: 886897713}
+    - target: {fileID: 274145337266790723, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetScreenResolution
+      objectReference: {fileID: 0}
+    - target: {fileID: 274145337266790723, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2137208273092486449, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1560048275}
+      objectReference: {fileID: 886897713}
+    - target: {fileID: 2137208273092486449, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMasterVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137208273092486449, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2214097488781108183, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1560048275}
+      objectReference: {fileID: 886897713}
+    - target: {fileID: 2214097488781108183, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetScreenResolution
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214097488781108183, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2977401312267433527, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1841,23 +1959,63 @@ PrefabInstance:
     - target: {fileID: 4601510030074842728, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1560048275}
+      objectReference: {fileID: 886897713}
+    - target: {fileID: 4601510030074842728, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetScreenResolution
+      objectReference: {fileID: 0}
+    - target: {fileID: 4601510030074842728, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5986543907541064843, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1560048275}
+      objectReference: {fileID: 886897713}
+    - target: {fileID: 5986543907541064843, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetFullscreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986543907541064843, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6827098886395969893, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1560048275}
+      objectReference: {fileID: 886897713}
+    - target: {fileID: 6827098886395969893, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSfxVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827098886395969893, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8281834747635060055, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1560048275}
+      objectReference: {fileID: 886897713}
+    - target: {fileID: 8281834747635060055, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMusicVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281834747635060055, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8544069737957019150, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1560048275}
+      objectReference: {fileID: 177415026}
+    - target: {fileID: 8544069737957019150, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackToMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544069737957019150, guid: 98396b043b90ea34eb014ce1960680d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuUIController, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1869,7 +2027,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 983096033}
   - {fileID: 1762992755}
-  - {fileID: 1560048276}
+  - {fileID: 886897712}
+  - {fileID: 177415027}
   - {fileID: 1647540805}
   - {fileID: 2139041145}
   - {fileID: 1052166907}
