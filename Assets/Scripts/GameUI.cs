@@ -13,8 +13,12 @@ public class GameUI : MonoBehaviour {
     public RectTransform newWaveBanner;
     public TextMeshProUGUI newWaveTitle;
     public TextMeshProUGUI newWaveEnemyCount;
+    public TextMeshProUGUI scoreUI;
+    public TextMeshProUGUI gameOverScoreUI;
+    public RectTransform healthBar;
 
     Spawner spawner;
+    Player player;
     
     Coroutine animateCoroutine;
 
@@ -23,11 +27,26 @@ public class GameUI : MonoBehaviour {
         spawner.OnNewWave += OnNewWave;
     }
 
+    void Start()
+    {
+        player = FindAnyObjectByType<Player>();
+        player.OnDeath += OnGameOver;
+    }
+
+    void Update() {
+        scoreUI.text = ScoreKeeper.score.ToString( "D6" );
+        float healthFraction = 0;
+        if( player != null ) {
+            healthFraction = player.health / player.startingHealth;
+        }
+        healthBar.localScale = new Vector3( healthFraction, 1, 1 );
+    }
+
     void OnNewWave( int waveNumber ) {
         newWaveUI.SetActive( true );
         string[] numbers = { "One", "Two", "Three", "Four", "Five" };
-        newWaveTitle.text = "- Wave " + numbers[waveNumber-1] + " -";
-        string enemyCountString = spawner.waves[waveNumber-1].infinite ? "Infinite" : spawner.waves[waveNumber-1].enemyCount + ""; 
+        newWaveTitle.text = "- Wave " + numbers[waveNumber - 1] + " -";
+        string enemyCountString = spawner.waves[waveNumber - 1].infinite ? "Infinite" : spawner.waves[waveNumber - 1].enemyCount + "";
         newWaveEnemyCount.text = "Enemies: " + enemyCountString;
 
         if( animateCoroutine != null ) {
@@ -36,13 +55,12 @@ public class GameUI : MonoBehaviour {
         animateCoroutine = StartCoroutine( AnimateNewWaveBanner() );
     }
 
-    void Start()
-    {
-        FindAnyObjectByType<Player>().OnDeath += OnGameOver;
-    }
-
     void OnGameOver() {
-        StartCoroutine( Fade( Color.clear, Color.black, 1 ) );
+        Cursor.visible = true;
+        StartCoroutine( Fade( Color.clear, new Color( 0, 0, 0, 0.99f ), 1 ) );
+        gameOverScoreUI.text = scoreUI.text;
+        scoreUI.gameObject.SetActive( false );
+        healthBar.transform.parent.gameObject.SetActive( false );
         gameOverUI.SetActive( true );
     }
 
@@ -86,4 +104,7 @@ public class GameUI : MonoBehaviour {
         SceneManager.LoadScene( "Game" );
     }
 
+    public void ReturnToMainMenu() {
+        SceneManager.LoadScene( "Menu" );
+    }
 }
